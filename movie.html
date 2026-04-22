@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Horizon — CineStream</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/movie.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="navbar-logo">CINESTREAM</a>
+  <ul class="navbar-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="category.html">Movies</a></li>
+    <!-- <li><a href="category.html?genre=series">Series</a></li> -->
+    <li><a href="subscription.html">Plans</a></li>
+  </ul>
+  <div class="navbar-right">
+    <a href="login.html" class="btn-login">Sign In</a>
+  </div>
+</nav>
+
+<!-- ===== MOVIE DETAIL HERO ===== -->
+<div class="movie-detail-hero" style="background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);">
+  <div class="hero-bg-color"></div>
+  <div class="movie-detail-content">
+
+    <!-- Breadcrumb -->
+    <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">
+      <a href="index.html" style="color: var(--text-muted);">Home</a>
+      &nbsp;/&nbsp;
+      <a href="category.html" style="color: var(--text-muted);">Movies</a>
+      &nbsp;/&nbsp;
+      <span style="color: var(--text);">Dark Horizon</span>
+    </div>
+
+    <h1 class="detail-title">DARK HORIZON</h1>
+
+    <div class="detail-tags">
+      <span class="detail-tag green">98% Match</span>
+      <span class="detail-tag">2024</span>
+      <span class="detail-tag">2h 18m</span>
+      <span class="detail-tag">Sci-Fi</span>
+      <span class="detail-tag">Thriller</span>
+      <span class="detail-tag">PG-13</span>
+    </div>
+
+    <p class="detail-desc">
+      In a fractured future, one detective must unravel a conspiracy that stretches across
+      time and memory — before the city erases every trace of the truth. As the clock
+      ticks down, alliances crumble and nothing is as it seems.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="watch.php?id=1" class="btn-primary">▶ &nbsp;Play Now</a>
+      <a href="#more-like-this" class="btn-secondary">⊕ &nbsp;My List</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== MOVIE INFO ===== -->
+<div class="page-wrapper" style="padding-top: 0;">
+  <div class="movie-extra-info">
+
+    <h2 style="font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 1px; color: var(--white); margin-bottom: 20px;">About This Film</h2>
+
+    <div class="info-row">
+      <span class="info-label">Director</span>
+      <span class="info-value">Marcus Hale</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Cast</span>
+      <span class="info-value">James Orwell, Elena Cruz, David Park, Nadia Stein</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Genre</span>
+      <span class="info-value">Science Fiction, Thriller, Mystery</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Released</span>
+      <span class="info-value">March 14, 2024</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Audio</span>
+      <span class="info-value">English, Spanish, French</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Subtitles</span>
+      <span class="info-value">English, Spanish, French, German, Portuguese</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Rating</span>
+      <span class="info-value">PG-13 · Violence, Language</span>
+    </div>
+
+  </div>
+
+  <!-- More Like This -->
+  <section class="content-section" id="more-like-this">
+    <h2 class="section-title">
+      <span class="title-accent">▶</span> More Like This
+    </h2>
+    <div class="movie-row-wrapper">
+      <button class="scroll-btn left">&#8249;</button>
+      <div class="movie-row">
+
+        <div class="movie-card" onclick="location.href='movie.html?id=2'">
+          <div class="card-poster-placeholder">ECHO OF SHADOWS</div>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Echo of Shadows</div>
+            <div class="card-meta"><span class="match">95%</span><span class="year">2024</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" onclick="location.href='movie.html?id=3'">
+          <div class="card-poster-placeholder">NEBULA RISING</div>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Nebula Rising</div>
+            <div class="card-meta"><span class="match">97%</span><span class="year">2025</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" onclick="location.href='movie.html?id=9'">
+          <div class="card-poster-placeholder">VOID WALKER</div>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Void Walker</div>
+            <div class="card-meta"><span class="match">96%</span><span class="year">2025</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" onclick="location.href='movie.html?id=15'">
+          <div class="card-poster-placeholder">SOLAR WIND</div>
+          <div class="card-body">
+            <div class="card-title">Solar Wind</div>
+            <div class="card-meta"><span class="match">91%</span><span class="year">2024</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" onclick="location.href='movie.html?id=4'">
+          <div class="card-poster-placeholder">THE LAST SIGNAL</div>
+          <div class="card-body">
+            <div class="card-title">The Last Signal</div>
+            <div class="card-meta"><span class="match">92%</span><span class="year">2024</span></div>
+          </div>
+        </div>
+
+      </div>
+      <button class="scroll-btn right">&#8250;</button>
+    </div>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <a href="index.html" style="font-family: var(--font-display); font-size: 1.4rem; color: var(--red); letter-spacing: 2px; display: block; margin-bottom: 24px;">CINESTREAM</a>
+  <div class="footer-bottom">&copy; 2025 CineStream. All rights reserved.</div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
