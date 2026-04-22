@@ -1,0 +1,288 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choose Your Plan — CineStream</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/movie.css" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar scrolled" id="navbar">
+      <a href="index.html" class="navbar-logo">CINESTREAM</a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="category.html">Movies</a></li>
+        <li><a href="subscription.html" class="active">Plans</a></li>
+      </ul>
+      <div class="navbar-right">
+        <a href="login.html" class="btn-login">Sign In</a>
+      </div>
+    </nav>
+
+    <!-- ===== SUBSCRIPTION HERO ===== -->
+    <div class="subscription-hero">
+      <h1>Choose Your <span style="color: var(--red)">Plan</span></h1>
+      <p>Unlimited movies and shows. No contracts. No hidden fees.</p>
+      <p style="font-size: 0.82rem; color: var(--text-muted)">
+        Cancel anytime. Start watching today.
+      </p>
+    </div>
+
+    <!-- ===== PLANS GRID ===== -->
+    <div class="plans-grid">
+      <!-- Plan 1: Basic -->
+      <div class="plan-card">
+        <div class="plan-name">Basic</div>
+        <div class="plan-price">300TK <span>/ month</span></div>
+
+        <ul class="plan-features">
+          <li><span class="check">✓</span> HD Streaming (720p)</li>
+          <li><span class="check">✓</span> 1 Screen at a time</li>
+          <li><span class="check">✓</span> Access to free content</li>
+          <li><span class="cross">✗</span> Premium movies</li>
+          <li><span class="cross">✗</span> 4K Ultra HD</li>
+          <li><span class="cross">✗</span> Download & Watch offline</li>
+        </ul>
+
+        <!-- Form to subscribe — posts plan to PHP -->
+        <form action="php/subscribe.php" method="POST">
+          <input type="hidden" name="plan" value="basic" />
+          <button type="submit" class="btn-subscribe outline">Get Basic</button>
+        </form>
+      </div>
+
+      <!-- Plan 2: Standard (Most Popular) -->
+      <div class="plan-card popular">
+        <span class="plan-badge">Most Popular</span>
+        <div class="plan-name">Standard</div>
+        <div class="plan-price">500TK <span>/ month</span></div>
+
+        <ul class="plan-features">
+          <li><span class="check">✓</span> Full HD Streaming (1080p)</li>
+          <li><span class="check">✓</span> 2 Screens at a time</li>
+          <li><span class="check">✓</span> All free content</li>
+          <li><span class="check">✓</span> Premium movies</li>
+          <li><span class="cross">✗</span> 4K Ultra HD</li>
+          <li><span class="cross">✗</span> Download & Watch offline</li>
+        </ul>
+
+        <form action="php/subscribe.php" method="POST">
+          <input type="hidden" name="plan" value="standard" />
+          <button type="submit" class="btn-subscribe filled">
+            Get Standard
+          </button>
+        </form>
+      </div>
+
+      <!-- Plan 3: Premium -->
+      <div class="plan-card">
+        <div class="plan-name">Premium</div>
+        <div class="plan-price">1000TK <span>/ month</span></div>
+
+        <ul class="plan-features">
+          <li><span class="check">✓</span> 4K Ultra HD + HDR</li>
+          <li><span class="check">✓</span> 4 Screens at a time</li>
+          <li><span class="check">✓</span> All content</li>
+          <li><span class="check">✓</span> Premium movies</li>
+          <li><span class="check">✓</span> All new releases</li>
+          <li><span class="check">✓</span> Download & Watch offline</li>
+        </ul>
+
+        <form action="php/subscribe.php" method="POST">
+          <input type="hidden" name="plan" value="premium" />
+          <button type="submit" class="btn-subscribe outline">
+            Get Premium
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div style="max-width: 700px; margin: 0 auto; padding: 0 4% 60px">
+      <h2
+        style="
+          font-family: var(--font-display);
+          font-size: 1.8rem;
+          letter-spacing: 1.5px;
+          color: var(--white);
+          margin-bottom: 24px;
+          text-align: center;
+        "
+      >
+        Frequently Asked Questions
+      </h2>
+
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.08)">
+        <details
+          style="
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          "
+        >
+          <summary
+            style="
+              cursor: pointer;
+              font-weight: 700;
+              color: var(--white);
+              font-size: 0.95rem;
+              list-style: none;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            Can I cancel anytime? <span>+</span>
+          </summary>
+          <p
+            style="
+              margin-top: 12px;
+              font-size: 0.88rem;
+              color: var(--text-muted);
+              line-height: 1.7;
+            "
+          >
+            Yes. There are no contracts or commitments. You can cancel your
+            subscription at any time, and you will not be charged after your
+            current billing period ends.
+          </p>
+        </details>
+
+        <details
+          style="
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          "
+        >
+          <summary
+            style="
+              cursor: pointer;
+              font-weight: 700;
+              color: var(--white);
+              font-size: 0.95rem;
+              list-style: none;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            What is a "Premium" movie? <span>+</span>
+          </summary>
+          <p
+            style="
+              margin-top: 12px;
+              font-size: 0.88rem;
+              color: var(--text-muted);
+              line-height: 1.7;
+            "
+          >
+            Premium movies are our latest releases and exclusive titles,
+            available only to Standard and Premium plan subscribers. They are
+            marked with a gold PREMIUM badge on the poster.
+          </p>
+        </details>
+
+        <details
+          style="
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          "
+        >
+          <summary
+            style="
+              cursor: pointer;
+              font-weight: 700;
+              color: var(--white);
+              font-size: 0.95rem;
+              list-style: none;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            How many screens can I watch on? <span>+</span>
+          </summary>
+          <p
+            style="
+              margin-top: 12px;
+              font-size: 0.88rem;
+              color: var(--text-muted);
+              line-height: 1.7;
+            "
+          >
+            Basic: 1 screen. Standard: 2 screens simultaneously. Premium: 4
+            screens simultaneously.
+          </p>
+        </details>
+
+        <details style="padding: 18px 0">
+          <summary
+            style="
+              cursor: pointer;
+              font-weight: 700;
+              color: var(--white);
+              font-size: 0.95rem;
+              list-style: none;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            Is this a real payment? <span>+</span>
+          </summary>
+          <p
+            style="
+              margin-top: 12px;
+              font-size: 0.88rem;
+              color: var(--text-muted);
+              line-height: 1.7;
+            "
+          >
+            No — this is a student project demo. No real payment is processed.
+            Clicking "Subscribe" simply updates your account status in the
+            database for demonstration purposes.
+          </p>
+        </details>
+      </div>
+    </div>
+
+    <footer>
+      <a
+        href="index.html"
+        style="
+          font-family: var(--font-display);
+          font-size: 1.4rem;
+          color: var(--red);
+          letter-spacing: 2px;
+          display: block;
+          margin-bottom: 24px;
+        "
+        >CINESTREAM</a
+      >
+      <div class="footer-bottom">
+        &copy; 2025 CineStream. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      // Show success/error from PHP redirect
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("success") === "subscribed") {
+        const msg = document.createElement("div");
+        msg.className = "alert alert-success";
+        msg.style.cssText =
+          "max-width:500px;margin:0 auto 20px;text-align:center;";
+        msg.textContent =
+          "✅ You are now subscribed! Enjoy unlimited streaming.";
+        document.querySelector(".subscription-hero").appendChild(msg);
+      } else if (params.get("error") === "login") {
+        const msg = document.createElement("div");
+        msg.className = "alert alert-error";
+        msg.style.cssText =
+          "max-width:500px;margin:0 auto 20px;text-align:center;";
+        msg.innerHTML =
+          '⚠️ Please <a href="login.html" style="color:inherit;font-weight:700;">sign in</a> first to subscribe.';
+        document.querySelector(".subscription-hero").appendChild(msg);
+      }
+    </script>
+  </body>
+</html>
