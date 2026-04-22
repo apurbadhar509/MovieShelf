@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — CineStream</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body class="auth-page">
+
+  <!-- Background overlay -->
+  <div class="auth-bg"></div>
+
+  <!-- Navbar -->
+  <nav class="auth-nav">
+    <a href="index.html" class="logo">CINESTREAM</a>
+  </nav>
+
+  <!-- Register Form Container -->
+  <div class="auth-container">
+    <div class="auth-card">
+
+      <h1>Create Account</h1>
+
+      <!-- Alert box for errors (also populated by JavaScript) -->
+      <div class="alert" id="alertBox" style="display:none;"></div>
+
+      <!-- Registration Form — action goes to PHP file -->
+      <form action="php/register.php" method="POST" id="registerForm">
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="John Doe"
+            required
+            autocomplete="name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="At least 6 characters"
+            required
+            minlength="6"
+            autocomplete="new-password"
+          />
+          <span class="toggle-pass" title="Show/hide password">👁</span>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm_password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm_password"
+            name="confirm_password"
+            placeholder="Repeat your password"
+            required
+            autocomplete="new-password"
+          />
+          <span class="toggle-pass" title="Show/hide password">👁</span>
+        </div>
+
+        <!-- Terms checkbox -->
+        <label class="form-check" style="margin-bottom: 20px;">
+          <input type="checkbox" name="agree_terms" value="1" required />
+          I agree to the <a href="#" style="color:var(--white);">Terms of Service</a>
+        </label>
+
+        <button type="submit" class="btn-auth">Create Account</button>
+
+      </form>
+
+      <div class="auth-divider"><span>ALREADY HAVE AN ACCOUNT?</span></div>
+
+      <p class="auth-link">
+        <a href="login.html">Sign in instead</a>
+      </p>
+
+      <p class="terms-text">
+        Your personal information is protected. We do not share your data with third parties.
+      </p>
+
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Show URL error messages passed from PHP redirect
+    const params = new URLSearchParams(window.location.search);
+    const alertBox = document.getElementById('alertBox');
+
+    if (params.get('error') === 'exists') {
+      alertBox.className = 'alert alert-error';
+      alertBox.textContent = '❌ An account with this email already exists.';
+      alertBox.style.display = 'block';
+    } else if (params.get('error') === 'mismatch') {
+      alertBox.className = 'alert alert-error';
+      alertBox.textContent = '❌ Passwords do not match.';
+      alertBox.style.display = 'block';
+    } else if (params.get('error') === 'short') {
+      alertBox.className = 'alert alert-error';
+      alertBox.textContent = '❌ Password must be at least 6 characters.';
+      alertBox.style.display = 'block';
+    } else if (params.get('error') === 'db') {
+      alertBox.className = 'alert alert-error';
+      alertBox.textContent = '❌ Database error. Please try again later.';
+      alertBox.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
