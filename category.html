@@ -1,0 +1,437 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browse Movies — CineStream</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/movie.css" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar scrolled" id="navbar">
+      <a href="index.html" class="navbar-logo">CINESTREAM</a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="category.html" class="active">Movies</a></li>
+        <!-- <li><a href="category.html?genre=series">Series</a></li> -->
+        <li><a href="subscription.html">Plans</a></li>
+      </ul>
+      <div class="navbar-right">
+        <a href="login.html" class="btn-login">Sign In</a>
+      </div>
+    </nav>
+
+    <div class="page-wrapper">
+      <!-- Page Header -->
+      <div style="padding: 40px 4% 20px">
+        <h1
+          style="
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: var(--white);
+          "
+        >
+          Browse <span style="color: var(--red)">Movies</span>
+        </h1>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 6px">
+          Showing 20 titles &nbsp;·&nbsp; Filter by genre below
+        </p>
+      </div>
+
+      <!-- Genre Filter Buttons -->
+      <div class="category-filter">
+        <button class="filter-btn active" data-genre="all">All</button>
+        <button class="filter-btn" data-genre="action">Action</button>
+        <button class="filter-btn" data-genre="sci-fi">Sci-Fi</button>
+        <button class="filter-btn" data-genre="thriller">Thriller</button>
+        <button class="filter-btn" data-genre="drama">Drama</button>
+        <button class="filter-btn" data-genre="horror">Horror</button>
+        <button class="filter-btn" data-genre="mystery">Mystery</button>
+        <button class="filter-btn" data-genre="adventure">Adventure</button>
+        <button class="filter-btn" data-genre="crime">Crime</button>
+      </div>
+
+      <!-- Movies Grid -->
+      <div class="movies-grid">
+        <!-- Card 1 -->
+        <div
+          class="movie-card"
+          data-genre="sci-fi"
+          onclick="location.href = 'movie.html?id=1'"
+        >
+          <div class="card-poster-placeholder">DARK HORIZON</div>
+          <span class="hd-badge">HD</span>
+          <div class="card-body">
+            <div class="card-title">Dark Horizon</div>
+            <div class="card-meta">
+              <span class="match">98%</span><span class="year">2024</span
+              ><span class="card-badge">Sci-Fi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="movie-card"
+          data-genre="thriller"
+          onclick="location.href = 'movie.html?id=2'"
+        >
+          <div class="card-poster-placeholder">ECHO OF SHADOWS</div>
+          <span class="hd-badge">HD</span>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Echo of Shadows</div>
+            <div class="card-meta">
+              <span class="match">95%</span><span class="year">2024</span
+              ><span class="card-badge">Thriller</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="movie-card"
+          data-genre="adventure"
+          onclick="location.href = 'movie.html?id=3'"
+        >
+          <div class="card-poster-placeholder">NEBULA RISING</div>
+          <span class="hd-badge">4K</span>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Nebula Rising</div>
+            <div class="card-meta">
+              <span class="match">97%</span><span class="year">2025</span
+              ><span class="card-badge">Adventure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="movie-card"
+          data-genre="drama"
+          onclick="location.href = 'movie.html?id=4'"
+        >
+          <div class="card-poster-placeholder">THE LAST SIGNAL</div>
+          <span class="hd-badge">HD</span>
+          <div class="card-body">
+            <div class="card-title">The Last Signal</div>
+            <div class="card-meta">
+              <span class="match">92%</span><span class="year">2024</span
+              ><span class="card-badge">Drama</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div
+          class="movie-card"
+          data-genre="action"
+          onclick="location.href = 'movie.html?id=5'"
+        >
+          <div class="card-poster-placeholder">IRON WOLVES</div>
+          <span class="hd-badge">HD</span>
+          <div class="card-body">
+            <div class="card-title">Iron Wolves</div>
+            <div class="card-meta">
+              <span class="match">89%</span><span class="year">2023</span
+              ><span class="card-badge">Action</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div
+          class="movie-card"
+          data-genre="horror"
+          onclick="location.href = 'movie.html?id=6'"
+        >
+          <div class="card-poster-placeholder">SILENT DEPTHS</div>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Silent Depths</div>
+            <div class="card-meta">
+              <span class="match">94%</span><span class="year">2024</span
+              ><span class="card-badge">Horror</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div
+          class="movie-card"
+          data-genre="action"
+          onclick="location.href = 'movie.html?id=7'"
+        >
+          <div class="card-poster-placeholder">CRIMSON DAWN</div>
+          <span class="hd-badge">HD</span>
+          <div class="card-body">
+            <div class="card-title">Crimson Dawn</div>
+            <div class="card-meta">
+              <span class="match">91%</span><span class="year">2023</span
+              ><span class="card-badge">Action</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div
+          class="movie-card"
+          data-genre="mystery"
+          onclick="location.href = 'movie.html?id=8'"
+        >
+          <div class="card-poster-placeholder">FORGOTTEN CITY</div>
+          <span class="hd-badge">HD</span>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Forgotten City</div>
+            <div class="card-meta">
+              <span class="match">93%</span><span class="year">2025</span
+              ><span class="card-badge">Mystery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div
+          class="movie-card"
+          data-genre="sci-fi"
+          onclick="location.href = 'movie.html?id=9'"
+        >
+          <div class="card-poster-placeholder">VOID WALKER</div>
+          <span class="hd-badge">4K</span>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Void Walker</div>
+            <div class="card-meta">
+              <span class="match">96%</span><span class="year">2025</span
+              ><span class="card-badge">Sci-Fi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div
+          class="movie-card"
+          data-genre="action"
+          onclick="location.href = 'movie.html?id=10'"
+        >
+          <div class="card-poster-placeholder">NEON SAMURAI</div>
+          <span class="hd-badge">HD</span>
+          <div class="card-body">
+            <div class="card-title">Neon Samurai</div>
+            <div class="card-meta">
+              <span class="match">88%</span><span class="year">2024</span
+              ><span class="card-badge">Action</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div
+          class="movie-card"
+          data-genre="horror"
+          onclick="location.href = 'movie.html?id=11'"
+        >
+          <div class="card-poster-placeholder">THE HOLLOW</div>
+          <span class="hd-badge">HD</span>
+          <div class="card-body">
+            <div class="card-title">The Hollow</div>
+            <div class="card-meta">
+              <span class="match">90%</span><span class="year">2023</span
+              ><span class="card-badge">Horror</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div
+          class="movie-card"
+          data-genre="drama"
+          onclick="location.href = 'movie.html?id=12'"
+        >
+          <div class="card-poster-placeholder">SHATTERED GLASS</div>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Shattered Glass</div>
+            <div class="card-meta">
+              <span class="match">87%</span><span class="year">2024</span
+              ><span class="card-badge">Drama</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 13 -->
+        <div
+          class="movie-card"
+          data-genre="action"
+          onclick="location.href = 'movie.html?id=13'"
+        >
+          <div class="card-poster-placeholder">ARCTIC STORM</div>
+          <span class="hd-badge">HD</span>
+          <div class="card-body">
+            <div class="card-title">Arctic Storm</div>
+            <div class="card-meta">
+              <span class="match">85%</span><span class="year">2023</span
+              ><span class="card-badge">Action</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 14 -->
+        <div
+          class="movie-card"
+          data-genre="mystery"
+          onclick="location.href = 'movie.html?id=14'"
+        >
+          <div class="card-poster-placeholder">MIRROR MAZE</div>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Mirror Maze</div>
+            <div class="card-meta">
+              <span class="match">93%</span><span class="year">2025</span
+              ><span class="card-badge">Mystery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 15 -->
+        <div
+          class="movie-card"
+          data-genre="sci-fi"
+          onclick="location.href = 'movie.html?id=15'"
+        >
+          <div class="card-poster-placeholder">SOLAR WIND</div>
+          <span class="hd-badge">4K</span>
+          <div class="card-body">
+            <div class="card-title">Solar Wind</div>
+            <div class="card-meta">
+              <span class="match">91%</span><span class="year">2024</span
+              ><span class="card-badge">Sci-Fi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 16 -->
+        <div
+          class="movie-card"
+          data-genre="thriller"
+          onclick="location.href = 'movie.html?id=16'"
+        >
+          <div class="card-poster-placeholder">BLOOD TIDE</div>
+          <span class="hd-badge">4K</span>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Blood Tide</div>
+            <div class="card-meta">
+              <span class="match">99%</span><span class="year">2025</span
+              ><span class="card-badge">Thriller</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 17 -->
+        <div
+          class="movie-card"
+          data-genre="drama"
+          onclick="location.href = 'movie.html?id=17'"
+        >
+          <div class="card-poster-placeholder">PULSE</div>
+          <span class="hd-badge">HD</span>
+          <div class="card-body">
+            <div class="card-title">Pulse</div>
+            <div class="card-meta">
+              <span class="match">94%</span><span class="year">2025</span
+              ><span class="card-badge">Drama</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 18 -->
+        <div
+          class="movie-card"
+          data-genre="crime"
+          onclick="location.href = 'movie.html?id=18'"
+        >
+          <div class="card-poster-placeholder">GOLDEN CAGE</div>
+          <span class="hd-badge">HD</span>
+          <div class="card-body">
+            <div class="card-title">Golden Cage</div>
+            <div class="card-meta">
+              <span class="match">88%</span><span class="year">2025</span
+              ><span class="card-badge">Crime</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 19 -->
+        <div
+          class="movie-card"
+          data-genre="adventure"
+          onclick="location.href = 'movie.html?id=19'"
+        >
+          <div class="card-poster-placeholder">DEEP BLUE</div>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Deep Blue</div>
+            <div class="card-meta">
+              <span class="match">92%</span><span class="year">2025</span
+              ><span class="card-badge">Adventure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 20 -->
+        <div
+          class="movie-card"
+          data-genre="action"
+          onclick="location.href = 'movie.html?id=21'"
+        >
+          <div class="card-poster-placeholder">IRON FIST II</div>
+          <span class="hd-badge">4K</span>
+          <span class="premium-badge">PREMIUM</span>
+          <div class="lock-overlay">🔒</div>
+          <div class="card-body">
+            <div class="card-title">Iron Fist II</div>
+            <div class="card-meta">
+              <span class="match">97%</span><span class="year">2025</span
+              ><span class="card-badge">Action</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <a
+        href="index.html"
+        style="
+          font-family: var(--font-display);
+          font-size: 1.4rem;
+          color: var(--red);
+          letter-spacing: 2px;
+          display: block;
+          margin-bottom: 24px;
+        "
+        >CINESTREAM</a
+      >
+      <div class="footer-bottom">
+        &copy; 2025 CineStream. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
