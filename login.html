@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — CineStream</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body class="auth-page">
+
+  <!-- Background overlay -->
+  <div class="auth-bg"></div>
+
+  <!-- Navbar -->
+  <nav class="auth-nav">
+    <a href="index.html" class="logo">CINESTREAM</a>
+  </nav>
+
+  <!-- Login Form Container -->
+  <div class="auth-container">
+    <div class="auth-card">
+
+      <h1>Sign In</h1>
+
+      
+      <div class="alert alert-error" id="alertBox" style="display:none;"></div>
+
+      <form action="php/login.php" method="POST" id="loginForm">
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Your password"
+            required
+            autocomplete="current-password"
+          />
+          <span class="toggle-pass" title="Show/hide password">👁</span>
+        </div>
+
+        <!-- Remember me checkbox -->
+        <label class="form-check" style="margin-bottom: 20px;">
+          <input type="checkbox" name="remember" value="1" />
+          Remember me for 30 days
+        </label>
+
+        <button type="submit" class="btn-auth">Sign In</button>
+
+      </form>
+
+      <div class="auth-divider"><span>OR</span></div>
+
+      <p class="auth-link">
+        New to CineStream? <a href="register.html">Sign up now</a>
+      </p>
+
+      <p class="auth-link" style="margin-top: 10px;">
+        <a href="#" style="color: var(--text-muted); font-size: 0.82rem;">Forgot password?</a>
+      </p>
+
+      <p class="terms-text">
+        This page is protected. By signing in, you agree to our
+        <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+      </p>
+
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Show URL error messages (e.g., ?error=invalid_credentials)
+    const params = new URLSearchParams(window.location.search);
+    const alertBox = document.getElementById('alertBox');
+
+    if (params.get('error') === 'invalid') {
+      alertBox.textContent = '❌ Invalid email or password. Please try again.';
+      alertBox.style.display = 'block';
+    } else if (params.get('error') === 'empty') {
+      alertBox.textContent = '⚠️ Please fill in all fields.';
+      alertBox.style.display = 'block';
+    } else if (params.get('success') === 'registered') {
+      alertBox.className = 'alert alert-success';
+      alertBox.textContent = '✅ Account created! Please sign in.';
+      alertBox.style.display = 'block';
+    } else if (params.get('success') === 'loggedout') {
+      alertBox.className = 'alert alert-info';
+      alertBox.textContent = 'You have been signed out.';
+      alertBox.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
